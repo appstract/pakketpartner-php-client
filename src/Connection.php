@@ -5,12 +5,9 @@ namespace Appstract\Pakketpartner;
 use Appstract\Pakketpartner\Exceptions\ApiException;
 use Exception;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Psr\Http\Message\ResponseInterface;
 
 class Connection
 {
