@@ -1,0 +1,41 @@
+{
+    "name": "appstract/pakketpartner-php-client",
+    "description": "PHP Client for the Pakketpartner API",
+    "keywords": [
+        "appstract",
+        "pakketpartner-php-client"
+    ],
+    "homepage": "https://github.com/appstract/pakketpartner-php-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gijs Jorissen",
+            "email": "gijs@appstract.nl",
+            "homepage": "https://appstract.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "jenssegers/model": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Appstract\\Pakketpartner\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Appstract\\Pakketpartner\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
