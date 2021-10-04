@@ -158,9 +158,14 @@ class Connection
     private function parseResponse(Response $response)
     {
         try {
-            Psr7\rewind_body($response);
-
-            $json = json_decode($response->getBody()->getContents(), true);
+            if (method_exists(Psr7::class, 'rewind_body')) {
+                Psr7\rewind_body($response);
+                $json = json_decode($response->getBody()->getContents(), true);
+            } else {
+                $body = $response->getBody();
+                $body->seek(0);    
+                $json = json_decode($body->getContents(), true);
+            }
 
             return data_get($json, 'data');
         } catch (\RuntimeException $e) {
